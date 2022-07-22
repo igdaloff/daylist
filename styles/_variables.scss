@@ -1,0 +1,19 @@
+// Colors
+$black: #222;
+$white: #fff;
+$grey: #aaa;
+$dark-grey: lighten($black, 20%);
+
+// Spacing
+.content{
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 40px;
+  --space-7: 64px;
+  --space-8: 80px;
+  --space-9: 88px;
+  --space-10: 120px;
+}
