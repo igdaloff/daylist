@@ -1,6 +1,31 @@
+import React, { useEffect, useState } from 'react'
 import styles from '../styles/Home.module.scss'
 
-const Plan = () => {
+export default function Plan() {
+
+  const [values, setValues] = useState("");
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value
+    });   
+  };
+
+  // Get values from local storage, if they exist
+  useEffect(() => {
+    const storedItems = window.localStorage.getItem('values');
+    if ( storedItems !== null ) {
+      setValues(JSON.parse(storedItems))
+    }
+  }, []);
+
+  // Set values to local storage
+  useEffect(() => {
+    window.localStorage.setItem('values', JSON.stringify(values))
+  }, [values]);
+
   return ( 
     <>
       <h1>What do you want to do today?</h1>
@@ -9,109 +34,247 @@ const Plan = () => {
         <ul>
           <li className={styles.hourListItem}>
             <label>6:00a</label>
-            <input placeholder="A thing to do..." />
+            <input
+              placeholder="A thing to do..."
+              type="text"
+              value={values.todo6}                
+              onChange={handleInputChange}            
+              name="todo6"                 
+              label="Todo"                     
+            />
             <span className="material-icons-outlined">check_circle</span>            
           </li>
           <li className={styles.hourListItem}>
             <label>7:00a</label>
-            <input placeholder="A thing to do..." />
+            <input
+              placeholder="A thing to do..."
+              type="text"                  
+              value={values.todo7}
+              onChange={handleInputChange}            
+              name="todo7"                 
+              label="Todo"       
+            />
             <span className="material-icons-outlined">check_circle</span>
           </li>
           <li className={styles.hourListItem}>
             <label>8:00a</label>
-            <input placeholder="A thing to do..." />
+            <input
+              placeholder="A thing to do..."
+              type="text"                  
+              value={values.todo8}
+              onChange={handleInputChange}            
+              name="todo8"                 
+              label="Todo"       
+            />
             <span className="material-icons-outlined">check_circle</span>
           </li>
           <li className={styles.hourListItem}>
             <label>9:00a</label>
-            <input placeholder="A thing to do..." />
+            <input
+              placeholder="A thing to do..."
+              type="text"                  
+              value={values.todo9}
+              onChange={handleInputChange}            
+              name="todo9"                 
+              label="Todo"       
+            />
             <span className="material-icons-outlined">check_circle</span>
           </li>
           <li className={styles.hourListItem}>
             <label>10:00a</label>
-            <input placeholder="A thing to do..." />
+            <input
+              placeholder="A thing to do..."
+              type="text"                  
+              value={values.todo10}
+              onChange={handleInputChange}            
+              name="todo10"                 
+              label="Todo"       
+            />
             <span className="material-icons-outlined">check_circle</span>
           </li>
           <li className={styles.hourListItem}>
             <label>11:00a</label>
-            <input placeholder="A thing to do..." />
+            <input
+              placeholder="A thing to do..."
+              type="text"                  
+              value={values.todo11}
+              onChange={handleInputChange}            
+              name="todo11"                 
+              label="Todo"       
+            />
             <span className="material-icons-outlined">check_circle</span>
           </li>
           <li className={styles.hourListItem}>
             <label>12:00p</label>
-            <input placeholder="A thing to do..." />
+            <input
+              placeholder="A thing to do..."
+              type="text"                  
+              value={values.todo12}
+              onChange={handleInputChange}            
+              name="todo12"                 
+              label="Todo"       
+            />
             <span className="material-icons-outlined">check_circle</span>
           </li>
           <li className={styles.hourListItem}>
             <label>1:00p</label>
-            <input placeholder="A thing to do..." />
+            <input
+              placeholder="A thing to do..."
+              type="text"                  
+              value={values.todo13}
+              onChange={handleInputChange}            
+              name="todo13"                 
+              label="Todo"       
+            />
             <span className="material-icons-outlined">check_circle</span>
           </li>
           <li className={styles.hourListItem}>
             <label>2:00p</label>
-            <input placeholder="A thing to do..." />
+            <input
+              placeholder="A thing to do..."
+              type="text"                  
+              value={values.todo14}
+              onChange={handleInputChange}            
+              name="todo14"                 
+              label="Todo"       
+            />
             <span className="material-icons-outlined">check_circle</span>
           </li>
           <li className={styles.hourListItem}>
             <label>3:00p</label>
-            <input placeholder="A thing to do..." />
+            <input
+              placeholder="A thing to do..."
+              type="text"                  
+              value={values.todo15}
+              onChange={handleInputChange}            
+              name="todo15"                 
+              label="Todo"       
+            />
             <span className="material-icons-outlined">check_circle</span>
           </li>
           <li className={styles.hourListItem}>
             <label>4:00p</label>
-            <input placeholder="A thing to do..." />
+            <input
+              placeholder="A thing to do..."
+              type="text"                  
+              value={values.todo16}
+              onChange={handleInputChange}            
+              name="todo16"                 
+              label="Todo"       
+            />
             <span className="material-icons-outlined">check_circle</span>
           </li>
           <li className={styles.hourListItem}>
             <label>5:00p</label>
-            <input placeholder="A thing to do..." />
+            <input
+              placeholder="A thing to do..."
+              type="text"                  
+              value={values.todo17}
+              onChange={handleInputChange}            
+              name="todo17"                 
+              label="Todo"       
+            />
             <span className="material-icons-outlined">check_circle</span>
           </li>
           <li className={styles.hourListItem}>
             <label>6:00p</label>
-            <input placeholder="A thing to do..." />
+            <input
+              placeholder="A thing to do..."
+              type="text"                  
+              value={values.todo18}
+              onChange={handleInputChange}            
+              name="todo18"                 
+              label="Todo"       
+            />
             <span className="material-icons-outlined">check_circle</span>
           </li>
           <li className={styles.hourListItem}>
             <label>7:00p</label>
-            <input placeholder="A thing to do..." />
+            <input
+              placeholder="A thing to do..."
+              type="text"                  
+              value={values.todo19}
+              onChange={handleInputChange}            
+              name="todo19"                 
+              label="Todo"       
+            />
             <span className="material-icons-outlined">check_circle</span>
           </li>
           <li className={styles.hourListItem}>
             <label>8:00p</label>
-            <input placeholder="A thing to do..." />
+            <input
+              placeholder="A thing to do..."
+              type="text"                  
+              value={values.todo20}
+              onChange={handleInputChange}            
+              name="todo20"                 
+              label="Todo"       
+            />
             <span className="material-icons-outlined">check_circle</span>
           </li>
           <li className={styles.hourListItem}>
             <label>9:00p</label>
-            <input placeholder="A thing to do..." />
+            <input
+              placeholder="A thing to do..."
+              type="text"                  
+              value={values.todo21}
+              onChange={handleInputChange}            
+              name="todo21"                 
+              label="Todo"       
+            />
             <span className="material-icons-outlined">check_circle</span>
           </li>
           <li className={styles.hourListItem}>
             <label>10:00p</label>
-            <input placeholder="A thing to do..." />
+            <input
+              placeholder="A thing to do..."
+              type="text"                  
+              value={values.todo22}
+              onChange={handleInputChange}            
+              name="todo22"                 
+              label="Todo"       
+            />
             <span className="material-icons-outlined">check_circle</span>
           </li>
           <li className={styles.hourListItem}>
             <label>11:00p</label>
-            <input placeholder="A thing to do..." />
+            <input
+              placeholder="A thing to do..."
+              type="text"                  
+              value={values.todo23}
+              onChange={handleInputChange}            
+              name="todo23"                 
+              label="Todo"       
+            />
             <span className="material-icons-outlined">check_circle</span>
           </li>
           <li className={styles.hourListItem}>
             <label>12:00p</label>
-            <input placeholder="A thing to do..." />
+            <input
+              placeholder="A thing to do..."
+              type="text"                  
+              value={values.todo24}
+              onChange={handleInputChange}            
+              name="todo24"                 
+              label="Todo"       
+            />
             <span className="material-icons-outlined">check_circle</span>
           </li>
           <li className={styles.notesListItem}>
             <label className={styles.notesLabel}>Notes</label>
-            <textarea rows="8" placeholder="Recap or reflect on the day...">
-            </textarea>
+            <textarea 
+              rows="8"
+              placeholder="Recap or reflect on the day..."
+              value={values.note}
+              onChange={handleInputChange}            
+              name="note"
+              label="Note"
+            >
+            </textarea>  
           </li>
         </ul>
 
-      </form>      
+      </form>   
     </>
-  );
+  )  
 }
- 
-export default Plan;
