@@ -35,6 +35,26 @@ export default function Plan() {
   const year = d.getFullYear()
   const today = days[d.getDay()] + ", " + months[d.getMonth()] + " " + date + ", " + year;
   
+  // Checkmark component and click animation
+  const CompleteIcon = () => {
+    const [complete, setComplete] = useState(false);
+
+    const animate = () => {
+      setComplete(!complete)       
+    }
+
+    const completeStyle = {      
+      transform: "rotate(360deg)",
+      transition: "ease-in 0.4s",
+      color: "green"      
+    }
+
+    return(
+      <span style={complete ? completeStyle : null} className="completeIcon material-icons-outlined"  onClick={animate}>check_circle</span>            
+    )
+  }
+
+
   return ( 
     <>
       <h1>What do you want to do today?</h1>
@@ -51,7 +71,7 @@ export default function Plan() {
               name="todo6"                 
               label="Todo"                     
             />
-            <span className="material-icons-outlined">check_circle</span>            
+            <CompleteIcon />
           </li>
           <li className={styles.hourListItem}>
             <label>7:00a</label>
@@ -63,7 +83,7 @@ export default function Plan() {
               name="todo7"                 
               label="Todo"       
             />
-            <span className="material-icons-outlined">check_circle</span>
+            <CompleteIcon />            
           </li>
           <li className={styles.hourListItem}>
             <label>8:00a</label>
@@ -75,7 +95,7 @@ export default function Plan() {
               name="todo8"                 
               label="Todo"       
             />
-            <span className="material-icons-outlined">check_circle</span>
+            <CompleteIcon />            
           </li>
           <li className={styles.hourListItem}>
             <label>9:00a</label>
@@ -87,7 +107,7 @@ export default function Plan() {
               name="todo9"                 
               label="Todo"       
             />
-            <span className="material-icons-outlined">check_circle</span>
+            <CompleteIcon />            
           </li>
           <li className={styles.hourListItem}>
             <label>10:00a</label>
@@ -99,7 +119,7 @@ export default function Plan() {
               name="todo10"                 
               label="Todo"       
             />
-            <span className="material-icons-outlined">check_circle</span>
+            <CompleteIcon />            
           </li>
           <li className={styles.hourListItem}>
             <label>11:00a</label>
@@ -111,7 +131,7 @@ export default function Plan() {
               name="todo11"                 
               label="Todo"       
             />
-            <span className="material-icons-outlined">check_circle</span>
+            <CompleteIcon />            
           </li>
           <li className={styles.hourListItem}>
             <label>12:00p</label>
@@ -123,7 +143,7 @@ export default function Plan() {
               name="todo12"                 
               label="Todo"       
             />
-            <span className="material-icons-outlined">check_circle</span>
+            <CompleteIcon />            
           </li>
           <li className={styles.hourListItem}>
             <label>1:00p</label>
@@ -135,7 +155,7 @@ export default function Plan() {
               name="todo13"                 
               label="Todo"       
             />
-            <span className="material-icons-outlined">check_circle</span>
+            <CompleteIcon />            
           </li>
           <li className={styles.hourListItem}>
             <label>2:00p</label>
@@ -147,7 +167,7 @@ export default function Plan() {
               name="todo14"                 
               label="Todo"       
             />
-            <span className="material-icons-outlined">check_circle</span>
+            <CompleteIcon />            
           </li>
           <li className={styles.hourListItem}>
             <label>3:00p</label>
@@ -159,7 +179,7 @@ export default function Plan() {
               name="todo15"                 
               label="Todo"       
             />
-            <span className="material-icons-outlined">check_circle</span>
+            <CompleteIcon />            
           </li>
           <li className={styles.hourListItem}>
             <label>4:00p</label>
@@ -171,7 +191,7 @@ export default function Plan() {
               name="todo16"                 
               label="Todo"       
             />
-            <span className="material-icons-outlined">check_circle</span>
+            <CompleteIcon />            
           </li>
           <li className={styles.hourListItem}>
             <label>5:00p</label>
@@ -183,7 +203,7 @@ export default function Plan() {
               name="todo17"                 
               label="Todo"       
             />
-            <span className="material-icons-outlined">check_circle</span>
+            <CompleteIcon />            
           </li>
           <li className={styles.hourListItem}>
             <label>6:00p</label>
@@ -195,7 +215,7 @@ export default function Plan() {
               name="todo18"                 
               label="Todo"       
             />
-            <span className="material-icons-outlined">check_circle</span>
+            <CompleteIcon />            
           </li>
           <li className={styles.hourListItem}>
             <label>7:00p</label>
@@ -207,7 +227,7 @@ export default function Plan() {
               name="todo19"                 
               label="Todo"       
             />
-            <span className="material-icons-outlined">check_circle</span>
+            <CompleteIcon />            
           </li>
           <li className={styles.hourListItem}>
             <label>8:00p</label>
@@ -219,7 +239,7 @@ export default function Plan() {
               name="todo20"                 
               label="Todo"       
             />
-            <span className="material-icons-outlined">check_circle</span>
+            <CompleteIcon />            
           </li>
           <li className={styles.hourListItem}>
             <label>9:00p</label>
@@ -231,7 +251,7 @@ export default function Plan() {
               name="todo21"                 
               label="Todo"       
             />
-            <span className="material-icons-outlined">check_circle</span>
+            <CompleteIcon />            
           </li>
           <li className={styles.hourListItem}>
             <label>10:00p</label>
@@ -243,7 +263,7 @@ export default function Plan() {
               name="todo22"                 
               label="Todo"       
             />
-            <span className="material-icons-outlined">check_circle</span>
+            <CompleteIcon />            
           </li>
           <li className={styles.hourListItem}>
             <label>11:00p</label>
@@ -255,7 +275,7 @@ export default function Plan() {
               name="todo23"                 
               label="Todo"       
             />
-            <span className="material-icons-outlined">check_circle</span>
+            <CompleteIcon />            
           </li>
           <li className={styles.hourListItem}>
             <label>12:00p</label>
@@ -267,7 +287,7 @@ export default function Plan() {
               name="todo24"                 
               label="Todo"       
             />
-            <span className="material-icons-outlined">check_circle</span>
+            <CompleteIcon />            
           </li>
           <li className={styles.notesListItem}>
             <label className={styles.notesLabel}>Notes</label>
