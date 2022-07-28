@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import Plan from '../components/Plan'
+import PlanHeader from '../components/PlanHeader'
+import PlanList from '../components/PlanList'
 
 export default function Home() {
   return (
@@ -9,7 +10,8 @@ export default function Home() {
         <meta name="description" content="" />
       </Head>
       <div>                
-        <Plan />
+        <PlanHeader />
+        <PlanList />
       </div>
     </>
   )
