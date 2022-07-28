@@ -1,7 +1,26 @@
-import CompleteIcon from './CompleteIcon'
-import styles from '../styles/Home.module.scss'
+import { useState } from 'react'
+import styles from '../styles/Plan.module.scss'
+import variables from '../styles/_variables.module.scss'
 
 export default function PlanListItem(props) {
+
+  const [complete, setComplete] = useState(false);
+
+  const animate = () => {
+    setComplete(!complete)       
+  }
+
+  const completeInputStyle = {
+    borderColor: variables.green,
+    outlineColor: variables.green,
+    transition: "ease-in 0.25s",
+  }
+
+  const completeCheckmarkStyle = {      
+    transform: "rotate(360deg)",
+    transition: "ease-in 0.4s",
+    color: variables.green   
+  }
 
   return ( 
     <li className={styles.hourListItem}>
@@ -12,9 +31,15 @@ export default function PlanListItem(props) {
         label="Todo" 
         name={props.name}
         value={props.value}
-        onChange={props.onChange}       
+        onChange={props.onChange}    
+        style={complete ? completeInputStyle : null}   
       />
-      <CompleteIcon />
+      <span
+        style={complete ? completeCheckmarkStyle : null}
+        className="completeIcon material-icons-outlined"
+        onClick={animate}
+      >check_circle        
+      </span>        
     </li>    
   );
 }

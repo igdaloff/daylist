@@ -3,6 +3,15 @@ $black: #222;
 $white: #fff;
 $grey: #aaa;
 $dark-grey: lighten($black, 20%);
+$green: #29e100;
+
+:export {
+  black: $black;
+  white: $white;
+  grey: $grey;
+  darkGrey: $dark-grey;
+  green: $green;
+}
 
 // Spacing
 .content{

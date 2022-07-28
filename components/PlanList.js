@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PlanListItem from './PlanListItem'
-import styles from '../styles/Home.module.scss'
+import styles from '../styles/Plan.module.scss'
 
 export default function PlanList() {
   
