@@ -11,8 +11,12 @@
   margin-bottom: var(--space-2); 
  
   label{
-    margin-right: 1em;
+    margin-right: 0.25em;
     width: 65px;
+
+    @media (min-width: $small) {
+      margin-right: 1em;
+    }
   }
 
   input{
