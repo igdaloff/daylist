@@ -3,18 +3,20 @@ $black: #222;
 $white: #fff;
 $grey: #aaa;
 $dark-grey: lighten($black, 20%);
+$light-grey: #f1f1f1;
 $blue: #26bedc;
 
-:export {
+:export{
   black: $black;
   white: $white;
   grey: $grey;
   darkGrey: $dark-grey;
   blue: $blue;
+  lightGrey: $light-grey;
 }
 
 // Spacing
-.content{
+#__next{
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 16px;
@@ -26,3 +28,8 @@ $blue: #26bedc;
   --space-9: 88px;
   --space-10: 120px;
 }
+
+// Media query widths
+$small: 600px;
+$medium: 800px;
+$large: 1000px;

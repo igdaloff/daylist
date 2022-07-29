@@ -2,12 +2,13 @@ import Link from 'next/link'
 
 const Nav = () => {
   return ( 
-    <nav>
-      <div className="logo">
-      <Link href="/"><a><strong>DL</strong></a></Link>
-      </div>      
-      <Link href="/days"><a>Previous Days</a></Link>
-      <Link href="/about"><a>About </a></Link>
+    <nav>    
+      <Link href="/"><a className="logo">DL</a></Link>      
+      <Link href="/days">
+        <a className="journal-nav-link"><span className="material-icons-outlined">menu_book</span>My Journal</a>
+      </Link>
+
+      {/* <Link href="/about"><a>About </a></Link> */}
     </nav>
    );
 }

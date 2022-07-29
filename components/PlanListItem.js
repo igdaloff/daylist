@@ -11,11 +11,10 @@ export default function PlanListItem(props) {
   }
 
   const completeInputStyle = {
-    borderColor: variables.blue,
     outlineColor: variables.blue,
     transition: "ease-in 0.25s",
   }
-  
+
   const completeCheckmarkStyle = {      
     transform: "rotate(360deg)",
     transition: "ease-in 0.4s",

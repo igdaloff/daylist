@@ -2,10 +2,14 @@ import Nav from "./Nav";
 
 const Layout = ({ children }) => {
   return ( 
-    <div className="content">
+    <>
       <Nav />
-      { children }
-    </div>
+      <div className="content">
+        <div className="content-inner">
+          { children }
+        </div>      
+      </div>
+    </>
    );
 }
  
