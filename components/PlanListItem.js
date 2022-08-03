@@ -35,14 +35,14 @@ export default function PlanListItem(props) {
       {hour == props.hour ? <span style={currentArrowStyle}>→</span> : null}
       <label>{props.hourLabel}</label>
       <input
-        placeholder="Enter a thing to do..."
+        placeholder="A thing to do..."
         type="text"
         label="Todo" 
         hour={props.hour}
         name={props.name}
         value={props.value}
         onChange={props.onChange}    
-        style={complete ? completeInputStyle : null}   
+        style={complete ? completeInputStyle : null}
       />
       <span
         style={complete ? completeCheckmarkStyle : null}

@@ -36,7 +36,7 @@ export default function PlanList() {
   
   return ( 
     <>            
-      <form className={styles.planForm}>
+      <form className={styles.planForm} autocomplete="off">
         <ul>
           <PlanListItem 
             hourLabel="6:00a"

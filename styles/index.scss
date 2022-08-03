@@ -14,6 +14,7 @@ body{
 
 .theme{
   overflow: auto;
+  transition: 0.3s ease;
 }
 .darkMode{
   color: white;
@@ -155,7 +156,7 @@ nav{
 //Forms
 input, textarea{
   padding: var(--space-2);
-  background-color: $light-grey;
+  background: $light-grey;
   border: 0;
   border-radius: 2px;
   color: $black;
@@ -164,18 +165,30 @@ input, textarea{
   font-weight: 300;
   outline: 2px solid transparent;
 
-  @media (min-width: $small) {
+  .darkMode &{
+    background: $grey;
+  }
+
+  @media (min-width: $small){
     padding: var(--space-3);
   }
 
   &::placeholder{
     color: $grey;
     font-size: 0.9em;
+
+    .darkMode &{
+      color: white;
+    }
   }
 
   &:focus{
     outline: 2px solid $grey;
     transition: 0.6s ease all;
+
+    .darkMode &{
+      outline-color: white;
+    }
   }
 }
 
