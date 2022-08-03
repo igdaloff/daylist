@@ -1,24 +1,22 @@
 {
-  "Posts": {
+  "Post": {
     {
       "id": 1,
-      "title": "July 12, 2022"       
+      "createdAt": {
+       "dateTime": {
+        "min": "2022-06-01T00:00:00Z",
+        "max": "2022-08-01T00:00:00Z"
+       } 
+      }
     },
     {
       "id": 2,
-      "title": "July 13, 2022"       
-    },
-    {
-      "id": 3,
-      "title": "July 14, 2022"       
-    },
-    {
-      "id": 4,
-      "title": "July 15, 2022"       
-    },
-    {
-      "id": 5,
-      "title": "July 16, 2022"       
-    }  
+      "createdAt": {
+        "dateTime": {
+         "min": "2022-06-01T00:00:00Z",
+         "max": "2022-08-01T00:00:00Z"
+        } 
+       }     
+    } 
   }
 }
