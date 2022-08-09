@@ -20,7 +20,7 @@ const Journal = ({ posts }) => {
       </Head> 
       <header>
         <h1>My Journal</h1>
-        <h2><em>This is dummy data. When this project is finished, it'll be an archive of real past daily entries.</em></h2>
+        <h2><em>This is dummy data. When this project is finished, it will be an archive of real past daily entries.</em></h2>
       </header>
       <main>
         <ul>
