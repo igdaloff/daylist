@@ -31,7 +31,7 @@ export default function PlanList() {
 
   // Set values to local storage
   useEffect(() => {
-    window.localStorage.setItem(localStorageKey, JSON.stringify(values))
+    window.localStorage.setItem("journal", [localStorageKey, JSON.stringify(values)])
   }, [values]);  
   
   return ( 

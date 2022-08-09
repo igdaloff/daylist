@@ -10,9 +10,9 @@ export default function PlanHeader() {
   const today = days[d.getDay()] + ", " + months[d.getMonth()] + " " + date + ", " + year;
   
   return ( 
-    <>
+    <header>
       <h1>What do you want to do today?</h1>
       <h2>{today}</h2>      
-    </>
+    </header>
    );
 }

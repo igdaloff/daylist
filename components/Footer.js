@@ -1,7 +1,9 @@
+import Link from 'next/link'
+
 const Footer = () => {
   return ( 
     <footer>
-      Copyright 2022
+      Made by <a href="//igdaloff.com">Nathan Igdaloff</a> | <Link href="/about">About</Link> | <a href="mailto:louis.nathan@gmail.com">Feedback</a>
     </footer>
    );
 }

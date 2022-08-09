@@ -1,4 +1,5 @@
 import Nav from "./Nav";
+import Footer from "./Footer";
 import { useState } from 'react'
 
 const Layout = ({ children }) => {
@@ -10,13 +11,14 @@ const Layout = ({ children }) => {
   }
 
   return ( 
-    <div className={`theme ${theme}`}>
+    <div className={theme}>
       <Nav toggleTheme={toggleTheme} theme={theme} />
-      <div className="content">
+      <main className="content">
         <div className="content-inner">
           { children }
-        </div>      
-      </div>
+        </div>
+      </main>            
+      <Footer />
     </div>
    );
 }

@@ -1,5 +1,5 @@
 export const getStaticPaths = async () =>{
-  const res = await fetch('https://jsonplaceholder.typicode.com/users');
+  const res = await fetch('https://mockend.com/igdaloff/daylist/posts');
   const data = await res.json();
 
   // map data to an array of path objects with params (id)
@@ -17,7 +17,7 @@ export const getStaticPaths = async () =>{
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const res = await fetch('https://jsonplaceholder.typicode.com/users/' + id)
+  const res = await fetch('https://mockend.com/igdaloff/daylist/posts/' + id)
   const data = await res.json();
 
   return {
@@ -25,13 +25,12 @@ export const getStaticProps = async (context) => {
   }
 }
 
-const dayDetails = ({ day }) => {
+const journalDayDetails = ({ day }) => {
   return ( 
-    <div>
-      <h1>{ day.name }</h1>
-      <p>{ day.email }</p>
-    </div>
+    <header>
+      <h1>{ new Date(day.createdAt).toDateString() }</h1>      
+    </header>
    );
 }
  
-export default dayDetails;
+export default journalDayDetails;
