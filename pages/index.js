@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <Head>
         <title>Daylist | Home</title>
-        <meta name="description" content="" />
+        <meta name="description" content="Create a daily todo list and keep a journal in one place." />
       </Head>                                 
       <PlanHeader />
       <PlanList />      
