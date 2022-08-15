@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import styles from '../styles/Plan.module.scss'
 import variables from '../styles/_variables.module.scss'
 
 export default function PlanListItem(props) {
@@ -31,7 +30,7 @@ export default function PlanListItem(props) {
   const hour = d.getHours();
 
   return ( 
-    <li className={styles.hourListItem}>
+    <li className="hourListItem">
       {hour == props.hour ? <span style={currentArrowStyle}>→</span> : null}
       <label>{props.hourLabel}</label>
       <input
@@ -43,11 +42,12 @@ export default function PlanListItem(props) {
         value={props.value}
         onChange={props.onChange}    
         style={complete ? completeInputStyle : null}
+        disabled={complete ? true : false}
       />
       <span
         style={complete ? completeCheckmarkStyle : null}
         className="completeIcon material-icons-outlined"
-        onClick={animate}
+        onClick={animate}        
       >check_circle        
       </span>        
     </li>    

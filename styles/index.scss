@@ -150,7 +150,6 @@ nav{
 }
 
 
-
 //Forms
 input, textarea{
   padding: var(--space-2);
@@ -165,6 +164,7 @@ input, textarea{
 
   .darkMode &{
     background: $dark-grey;
+    color: white;
   }
 
   @media (min-width: $small){
@@ -176,7 +176,7 @@ input, textarea{
     font-size: 0.9em;
 
     .darkMode &{
-      color: white;
+      
     }
   }
 
@@ -190,6 +190,55 @@ input, textarea{
   }
 }
 
+// List
+.hourListItem, .notesListItem{
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-2); 
+ 
+  label{
+    margin-right: 0.25em;
+    width: 65px;
+    color: $grey;
+
+    @media (min-width: $small) {
+      margin-right: 1em;
+    }
+  }
+
+  input{
+    border: 2px solid transparent;
+    margin-right: 1em;
+  }
+
+  input, textarea{
+    width: 100%;
+  }
+}
+
+.notesListItem{
+  align-items: start;
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid $dark-grey;
+}
+
+.completeIcon{
+  font-size: 2em;    
+  cursor: pointer;  
+  color: $grey; 
+  transition: $hover-transition;
+
+  &:hover{
+    color: $black;
+  }
+
+  .darkMode &{
+    &:hover{
+      color: white;
+    }
+  }
+}
 
 // Footer
 footer{

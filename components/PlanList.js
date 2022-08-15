@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import PlanListItem from './PlanListItem'
-import styles from '../styles/Plan.module.scss'
 
 export default function PlanList() {
   
@@ -36,7 +35,7 @@ export default function PlanList() {
   
   return ( 
     <>            
-      <form className={styles.planForm} autoComplete="off">
+      <form className="planForm" autoComplete="off">
         <ul>
           <PlanListItem 
             hourLabel="6:00a"
@@ -172,8 +171,8 @@ export default function PlanList() {
             onChange={handleInputChange}                   
           />
           
-          <li className={styles.notesListItem}>
-            <label className={styles.notesLabel}>Notes</label>
+          <li className="notesListItem">
+            <label className="notesLabel">Notes</label>
             <textarea 
               rows="8"
               placeholder="Recap or reflect on the day..."
