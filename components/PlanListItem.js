@@ -30,11 +30,11 @@ export default function PlanListItem(props) {
   const hour = d.getHours();
 
   return ( 
-    <li className="hourListItem">
+    <li className={`${hour == props.hour ? "activeHour" : null} hourListItem`}>
       {hour == props.hour ? <span style={currentArrowStyle}>→</span> : null}
       <label>{props.hourLabel}</label>
       <input
-        placeholder="A thing to do..."
+        placeholder="Enter a task..."
         type="text"
         label="Todo" 
         hour={props.hour}
@@ -42,7 +42,6 @@ export default function PlanListItem(props) {
         value={props.value}
         onChange={props.onChange}    
         style={complete ? completeInputStyle : null}
-        disabled={complete ? true : false}
       />
       <span
         style={complete ? completeCheckmarkStyle : null}
