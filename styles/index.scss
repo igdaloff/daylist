@@ -6,6 +6,7 @@ body{
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;  
+  background-color: $light-grey;
 
   @media (max-width: 600px) {
     font-size: 95%;
@@ -73,7 +74,7 @@ nav{
   align-items: center;
   padding: var(--space-2) 0;
   justify-content: space-between;
-  z-index: 100;
+  z-index: 100;    
 
   @media (min-width: $small){
     position: fixed;
@@ -172,7 +173,7 @@ input, textarea{
   }
 
   &::placeholder{
-    color: $grey;
+    color: $grey;    
     font-size: 0.9em;
   }
 
