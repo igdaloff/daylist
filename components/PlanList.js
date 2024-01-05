@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PlanListItem from './PlanListItem'
 
 export default function PlanList() {
-  const [values, setValues] = useState('')
+  const [values, setValues] = useState({})
 
   const handleInputChange = e => {
     const { name, value } = e.target
@@ -21,16 +21,20 @@ export default function PlanList() {
 
   // Get values from local storage, if they exist
   useEffect(() => {
-    const storedItems = window.localStorage.getItem(localStorageKey)
-    if (storedItems !== null) {
-      setValues(JSON.parse(storedItems))
+    try {
+      const storedItems = window.localStorage.getItem(localStorageKey)
+      if (storedItems) {
+        setValues(JSON.parse(storedItems))
+      }
+    } catch (e) {
+      console.error('Error parsing JSON from localStorage:', e)
     }
-  }, [])
+  }, [localStorageKey])
 
   // Set values to local storage
   useEffect(() => {
     window.localStorage.setItem(localStorageKey, JSON.stringify(values))
-  }, [values])
+  }, [values, localStorageKey])
 
   const renderPlanListItems = () => {
     const planListItems = []
