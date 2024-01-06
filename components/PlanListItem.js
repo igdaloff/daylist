@@ -4,6 +4,8 @@ import variables from '../styles/_variables.module.scss';
 export default function PlanListItem(props) {
   const [complete, setComplete] = useState(false);
 
+  const { hour, hourLabel, name, onChange, value } = props;
+
   const animate = () => {
     setComplete(!complete);
   };
@@ -26,23 +28,23 @@ export default function PlanListItem(props) {
   };
 
   const d = new Date();
-  const hour = d.getHours();
+  const currentHour = d.getHours();
 
   return (
-    <li className={`${hour == props.hour ? 'activeHour' : null} hourListItem`}>
-      {hour == props.hour ? <span style={currentArrowStyle}>→</span> : null}
-      <label>{props.hourLabel}</label>
+    <li className={`${currentHour == hour ? 'activeHour' : null} hourListItem`}>
+      {currentHour == hour ? <span style={currentArrowStyle}>→</span> : null}
+      <label>{hourLabel}</label>
       <input
         placeholder="Enter a task..."
         type="text"
         label="Todo"
-        hour={props.hour}
-        name={props.name}
-        value={props.value}
-        onChange={props.onChange}
+        hour={hour}
+        name={name}
+        value={value}
+        onChange={onChange}
         style={complete ? completeInputStyle : null}
       />
-      {props.value && (
+      {value && (
         <span
           style={complete ? completeCheckmarkStyle : null}
           className="completeIcon material-icons-outlined"
