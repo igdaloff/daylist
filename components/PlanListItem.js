@@ -42,13 +42,15 @@ export default function PlanListItem(props) {
         onChange={props.onChange}
         style={complete ? completeInputStyle : null}
       />
-      <span
-        style={complete ? completeCheckmarkStyle : null}
-        className="completeIcon material-icons-outlined"
-        onClick={animate}
-      >
-        check_circle
-      </span>
+      {props.value && (
+        <span
+          style={complete ? completeCheckmarkStyle : null}
+          className="completeIcon material-icons-outlined"
+          onClick={animate}
+        >
+          check_circle
+        </span>
+      )}
     </li>
   );
 }
