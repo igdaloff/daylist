@@ -1,11 +1,11 @@
-@import "variables.module.scss";
+@import 'variables.module.scss';
 
 html,
-body{
+body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;  
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
   background-color: $light-grey;
 
   @media (max-width: 600px) {
@@ -13,70 +13,71 @@ body{
   }
 }
 
-#__next{
+#__next {
   position: relative;
 }
 
-a{
+a {
   color: inherit;
 }
 
-*{
+* {
   box-sizing: border-box;
 }
 
-li, ul{
+li,
+ul {
   padding: 0;
   list-style: none;
 }
 
-.content{
+.content {
   padding: var(--space-7) var(--space-5);
   background-color: white;
   border-radius: 4px;
   margin: 0 var(--space-3) var(--space-3);
-  box-shadow: 0px 0px 13px 8px rgba(158,158,158,0.1);
+  box-shadow: 0px 0px 13px 8px rgba(158, 158, 158, 0.1);
   transition: $hover-transition;
 
-  .darkMode &{
+  .darkMode & {
     background-color: $black;
-    color: white;    
+    color: white;
   }
 
   @media (min-width: $small) {
     min-height: 100vw;
     margin: var(--space-5) 0 0 var(--space-7);
     padding: var(--space-8);
-    box-shadow: 0px 0px 13px 8px rgba(158,158,158,0.2);
+    box-shadow: 0px 0px 13px 8px rgba(158, 158, 158, 0.2);
     border-radius: 4px 0 0 0;
   }
 }
 
-.content-inner{
+.content-inner {
   margin-bottom: var(--space-8);
-  max-width: 36em;   
+  max-width: 36em;
 }
 
 // Typography
-h1{
+h1 {
   margin: 0;
   font-weight: 600;
 }
 
-h2{
+h2 {
   margin: 0.5em 0 1em;
-  font-weight: 300;  
+  font-weight: 300;
 }
 
 // Navigation
-nav{
+nav {
   display: flex;
   align-items: center;
   padding: var(--space-2) 0;
   justify-content: space-between;
-  z-index: 100;    
+  z-index: 100;
 
-  @media (min-width: $small){
+  @media (min-width: $small) {
     position: fixed;
     width: calc(100vh - var(--space-5));
     height: var(--space-7);
@@ -86,21 +87,22 @@ nav{
     flex-direction: row-reverse;
   }
 
-  @media (max-width: $small){
+  @media (max-width: $small) {
     margin: 0 var(--space-3);
   }
 
-  a, span{
+  a,
+  span {
     transition: 0.2s ease-out;
     text-decoration: none;
 
-    &:hover{
+    &:hover {
       color: $blue;
     }
   }
 }
 
-.logo{
+.logo {
   font-size: 0.85em;
   font-weight: 800;
   border: 1px solid;
@@ -108,7 +110,7 @@ nav{
   border-radius: 100%;
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     background: $blue;
     color: $light-grey;
   }
@@ -119,7 +121,7 @@ nav{
   }
 }
 
-.journal-nav-link{
+.journal-nav-link {
   font-weight: 400;
   text-transform: uppercase;
   font-size: 0.85em;
@@ -132,7 +134,7 @@ nav{
     margin-bottom: -2px;
   }
 
-  span{
+  span {
     font-size: 1.5em;
     vertical-align: middle;
     padding-right: 0.5em;
@@ -140,7 +142,7 @@ nav{
   }
 }
 
-.themeToggle{
+.themeToggle {
   padding-bottom: 2em;
   cursor: pointer;
   transform: rotate(90deg);
@@ -150,50 +152,53 @@ nav{
   }
 }
 
-
 //Forms
-input, textarea{
+input,
+textarea {
   padding: var(--space-2);
   background: $light-grey;
   border: 0;
   border-radius: 2px;
   color: $black;
   font-size: 1em;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
   font-weight: 300;
   outline: 2px solid transparent;
+  resize: none;
 
-  .darkMode &{
+  .darkMode & {
     background: $dark-grey;
     color: white;
   }
 
-  @media (min-width: $small){
+  @media (min-width: $small) {
     padding: var(--space-3);
   }
 
-  &::placeholder{
-    color: $grey;    
+  &::placeholder {
+    color: $grey;
     font-size: 0.9em;
   }
 
-  &:focus{
+  &:focus {
     outline: 2px solid $grey;
     transition: 0.6s ease all;
 
-    .darkMode &{
+    .darkMode & {
       outline-color: white;
     }
   }
 }
 
 // List
-.hourListItem, .notesListItem{
+.hourListItem,
+.notesListItem {
   display: flex;
   align-items: center;
-  margin-bottom: var(--space-2); 
- 
-  label{
+  margin-bottom: var(--space-2);
+
+  label {
     margin-right: 0.25em;
     width: 65px;
     color: $grey;
@@ -203,46 +208,47 @@ input, textarea{
     }
   }
 
-  input{
+  input {
     border: 2px solid transparent;
     margin-right: 1em;
   }
 
-  input, textarea{
+  input,
+  textarea {
     width: 100%;
   }
 }
 
-.notesListItem{
+.notesListItem {
   align-items: start;
   margin-top: var(--space-4);
   padding-top: var(--space-4);
   border-top: 1px solid $dark-grey;
 }
 
-.activeHour label{
+.activeHour label {
   color: inherit;
 }
 
-.completeIcon{
-  font-size: 2em;    
-  cursor: pointer;  
-  color: $grey; 
+.completeIcon {
+  font-size: 2em;
+  cursor: pointer;
+  color: $grey;
   transition: $hover-transition;
 
-  &:hover{
+  &:hover {
     color: $black;
   }
 
-  .darkMode &{
-    &:hover{
+  .darkMode & {
+    &:hover {
       color: white;
     }
   }
 }
 
 // Footer
-footer{
+footer {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -250,16 +256,16 @@ footer{
   padding: var(--space-8) 0 var(--space-4);
   color: $grey;
 
-  a{
+  a {
     transition: $hover-transition;
 
-    &:hover{
+    &:hover {
       color: $blue;
     }
   }
 }
 
 // 404
-.not-found{
+.not-found {
   text-align: center;
 }

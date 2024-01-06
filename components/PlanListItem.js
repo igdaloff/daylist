@@ -1,54 +1,54 @@
-import { useState } from 'react'
-import variables from '../styles/_variables.module.scss'
+import { useState } from 'react';
+import variables from '../styles/_variables.module.scss';
 
 export default function PlanListItem(props) {
-
   const [complete, setComplete] = useState(false);
 
   const animate = () => {
-    setComplete(!complete)       
-  }
+    setComplete(!complete);
+  };
 
   const completeInputStyle = {
     outlineColor: variables.blue,
-    transition: "ease-in 0.25s",
-  }
+    transition: 'ease-in 0.25s',
+  };
 
-  const completeCheckmarkStyle = {      
-    transform: "rotate(360deg)",
-    transition: "ease-in 0.4s",
-    color: variables.blue   
-  }
+  const completeCheckmarkStyle = {
+    transform: 'rotate(360deg)',
+    transition: 'ease-in 0.4s',
+    color: variables.blue,
+  };
 
   const currentArrowStyle = {
-    fontSize: "1em",
-    marginLeft: "-1.5em",
-    marginRight: "0.5em"
-  }
+    fontSize: '1em',
+    marginLeft: '-1.5em',
+    marginRight: '0.5em',
+  };
 
   const d = new Date();
   const hour = d.getHours();
 
-  return ( 
-    <li className={`${hour == props.hour ? "activeHour" : null} hourListItem`}>
+  return (
+    <li className={`${hour == props.hour ? 'activeHour' : null} hourListItem`}>
       {hour == props.hour ? <span style={currentArrowStyle}>→</span> : null}
       <label>{props.hourLabel}</label>
       <input
         placeholder="Enter a task..."
         type="text"
-        label="Todo" 
+        label="Todo"
         hour={props.hour}
         name={props.name}
         value={props.value}
-        onChange={props.onChange}    
+        onChange={props.onChange}
         style={complete ? completeInputStyle : null}
       />
       <span
         style={complete ? completeCheckmarkStyle : null}
         className="completeIcon material-icons-outlined"
-        onClick={animate}        
-      >check_circle        
-      </span>        
-    </li>    
+        onClick={animate}
+      >
+        check_circle
+      </span>
+    </li>
   );
 }
