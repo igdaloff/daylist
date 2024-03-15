@@ -10,21 +10,22 @@ export default function PlanListItem(props) {
     setComplete(!complete);
   };
 
-  const completeInputStyle = {
-    outlineColor: variables.blue,
-    transition: 'ease-in 0.25s',
-  };
-
-  const completeCheckmarkStyle = {
-    transform: 'rotate(360deg)',
-    transition: 'ease-in 0.4s',
-    color: variables.blue,
-  };
-
   const currentArrowStyle = {
     fontSize: '1em',
     marginLeft: '-1.5em',
     marginRight: '0.5em',
+  };
+
+  const completeInputStyle = {
+    outlineColor: variables.blue,
+    transition: 'ease-in 0.25s',
+    fontWeight: 'bold',
+    color: variables.blue,
+  };
+
+  const completeCheckmarkStyle = {
+    transition: 'ease-in 0.4s',
+    color: variables.blue,
   };
 
   const d = new Date();
@@ -50,7 +51,7 @@ export default function PlanListItem(props) {
           className="completeIcon material-icons-outlined"
           onClick={animate}
         >
-          check_circle
+          check
         </span>
       )}
     </li>
