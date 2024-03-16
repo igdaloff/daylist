@@ -1,4 +1,5 @@
-@import 'variables.module.scss';
+@import 'variables';
+@import 'globals';
 
 html,
 body {
@@ -6,14 +7,14 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
     Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: $light-grey;
+  background-color: var(--light-grey);
 
   @media (max-width: 600px) {
     font-size: 95%;
   }
 }
 
-#__next {
+body {
   position: relative;
 }
 
@@ -40,7 +41,7 @@ ul {
   transition: $hover-transition;
 
   .darkMode & {
-    background-color: $black;
+    background-color: var(--black);
     color: white;
   }
 
@@ -97,7 +98,7 @@ nav {
     text-decoration: none;
 
     &:hover {
-      color: $blue;
+      color: var(--blue);
     }
   }
 }
@@ -111,8 +112,8 @@ nav {
   cursor: pointer;
 
   &:hover {
-    background: $blue;
-    color: $light-grey;
+    background: var(--blue);
+    color: var(--light-grey);
   }
 
   @media (min-width: $small) {
@@ -156,10 +157,10 @@ nav {
 input,
 textarea {
   padding: var(--space-2);
-  background: $light-grey;
+  background: var(--light-grey);
   border: 0;
   border-radius: 2px;
-  color: $black;
+  color: var(--black);
   font-size: 1em;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
     Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -168,7 +169,7 @@ textarea {
   resize: none;
 
   .darkMode & {
-    background: $dark-grey;
+    background: var(--dark-grey);
     color: white;
   }
 
@@ -177,12 +178,12 @@ textarea {
   }
 
   &::placeholder {
-    color: $grey;
+    color: var(--grey);
     font-size: 0.9em;
   }
 
   &:focus {
-    outline: 2px solid $grey;
+    outline: 2px solid var(--grey);
     transition: 0.6s ease all;
 
     .darkMode & {
@@ -202,7 +203,7 @@ textarea {
   label {
     margin-right: 0.25em;
     width: 65px;
-    color: $grey;
+    color: var(--grey);
 
     @media (min-width: $small) {
       margin-right: 1em;
@@ -223,7 +224,7 @@ textarea {
   align-items: start;
   margin-top: var(--space-4);
   padding-top: var(--space-4);
-  border-top: 1px solid $dark-grey;
+  border-top: 1px solid var(--dark-grey);
 }
 
 .activeHour label {
@@ -233,13 +234,13 @@ textarea {
 .completeIcon {
   font-size: 2em;
   cursor: pointer;
-  color: $grey;
+  color: var(--grey);
   position: absolute;
   right: -1.25em;
   transition: $hover-transition;
 
   &:hover {
-    color: $black;
+    color: var(--black);
   }
 
   .darkMode & {
@@ -256,13 +257,13 @@ footer {
   width: 100%;
   text-align: center;
   padding: var(--space-8) 0 var(--space-4);
-  color: $grey;
+  color: var(--grey);
 
   a {
     transition: $hover-transition;
 
     &:hover {
-      color: $blue;
+      color: var(--blue);
     }
   }
 }
