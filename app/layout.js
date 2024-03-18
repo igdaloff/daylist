@@ -1,16 +1,18 @@
 'use client';
 
 import { useState } from 'react';
+import ThemeContext from './contexts/theme-provider';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import './styles/index.scss';
 
-function Layout({ children, pageProps }) {
+function Layout({ children }) {
   const [theme, setTheme] = useState('lightMode');
 
   const toggleTheme = () => {
     setTheme(theme === 'lightMode' ? 'darkMode' : 'lightMode');
   };
+
   return (
     <html lang="en">
       <head>
@@ -23,12 +25,14 @@ function Layout({ children, pageProps }) {
           rel="stylesheet"
         ></link>
       </head>
-      <body>
-        <Nav toggleTheme={toggleTheme} theme={theme} />
-        <main className="content">
-          <div className="content-inner">{children}</div>
-        </main>
-        <Footer />
+      <body className={theme}>
+        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+          <Nav />
+          <main className="content">
+            <div className="content-inner">{children}</div>
+          </main>
+          <Footer />
+        </ThemeContext.Provider>
       </body>
     </html>
   );
