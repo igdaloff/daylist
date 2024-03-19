@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import Link from 'next/link';
 import ThemeProvider from '../contexts/theme-provider';
+import SignInButton from './SignInButton';
 
 export default function Nav() {
   const { theme, toggleTheme } = useContext(ThemeProvider);
@@ -10,6 +11,7 @@ export default function Nav() {
       <Link href="/" className="logo">
         DL
       </Link>
+      <SignInButton />
       <Link href="/journal" className="journal-nav-link">
         <span className="material-icons-outlined">menu_book</span>My Journal
       </Link>

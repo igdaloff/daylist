@@ -4,9 +4,10 @@ import { useState } from 'react';
 import ThemeContext from './contexts/theme-provider';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
+import SessionProvider from './components/SessionProvider';
 import './styles/index.scss';
 
-function Layout({ children }) {
+export default function Layout({ children }) {
   const [theme, setTheme] = useState('lightMode');
 
   const toggleTheme = () => {
@@ -26,16 +27,16 @@ function Layout({ children }) {
         ></link>
       </head>
       <body className={theme}>
-        <ThemeContext.Provider value={{ theme, toggleTheme }}>
-          <Nav />
-          <main className="content">
-            <div className="content-inner">{children}</div>
-          </main>
-          <Footer />
-        </ThemeContext.Provider>
+        <SessionProvider>
+          <ThemeContext.Provider value={{ theme, toggleTheme }}>
+            <Nav />
+            <main className="content">
+              <div className="content-inner">{children}</div>
+            </main>
+            <Footer />
+          </ThemeContext.Provider>
+        </SessionProvider>
       </body>
     </html>
   );
 }
-
-export default Layout;
