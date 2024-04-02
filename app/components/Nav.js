@@ -25,7 +25,7 @@ export default function Nav() {
         <span className="material-icons-outlined align-middle pr-2 -mt-1">menu_book</span>My Journal
       </Link>
       <span
-        className="material-icons sm:pb-8 cursor-pointer transform rotate-0 sm:rotate-90 sm:hover:text-sky-500 sm:duration-200"
+        className="material-icons sm:pb-16 cursor-pointer transform rotate-0 sm:rotate-90 sm:hover:text-sky-500 sm:duration-200"
         onClick={toggleTheme}
       >
         {theme === 'light' ? 'nightlight' : 'light_mode'}

@@ -7,24 +7,6 @@ body {
   }
 }
 
-// Footer
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding: var(--space-8) 0 var(--space-4);
-  color: var(--grey);
-
-  a {
-    transition: $hover-transition;
-
-    &:hover {
-      color: var(--blue);
-    }
-  }
-}
-
 // 404
 .not-found {
   text-align: center;

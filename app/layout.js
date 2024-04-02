@@ -31,7 +31,7 @@ function Layout({ children }) {
           <main
             className="
             sm:min-h-[100vw] sm:mt-8 sm:ml-16 sm:mr-0 sm:mb-0 sm:rounded-none sm:rounded-tl-lg 
-              py-16 px-8 bg-white rounded-lg mx-4 mb-4 shadow-[0px_0px_13px_8px_rgba(158,158,158,0.2)] transition duration-300
+              sm:p-20 py-16 px-8 bg-white rounded-lg mx-4 mb-4 shadow-[0px_0px_13px_8px_rgba(158,158,158,0.2)] transition duration-300
               dark:bg-zinc-800 dark:text-white 
             "
           >
