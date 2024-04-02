@@ -22,8 +22,8 @@ export default function PlanHeader() {
 
   return (
     <header>
-      <h1>What do you want to do today?</h1>
-      <h2>{today}</h2>
+      <h1 className="font-semibold text-2xl">What do you want to do today?</h1>
+      <h2 className="mt-2 mb-4 font-light">{today}</h2>
     </header>
   );
 }
