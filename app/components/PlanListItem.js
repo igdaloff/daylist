@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import variables from '../styles/variables.module.scss';
 
 export default function PlanListItem(props) {
   const [complete, setComplete] = useState(false);
@@ -10,31 +9,19 @@ export default function PlanListItem(props) {
     setComplete(!complete);
   };
 
-  const currentArrowStyle = {
-    fontSize: '1em',
-    marginLeft: '-1.5em',
-    marginRight: '0.5em',
-  };
-
-  const completeInputStyle = {
-    outlineColor: variables.blue,
-    transition: 'ease-in 0.25s',
-    fontWeight: 'bold',
-    color: variables.blue,
-  };
-
-  const completeCheckmarkStyle = {
-    transition: 'ease-in 0.4s',
-    color: variables.blue,
-  };
-
   const d = new Date();
   const currentHour = d.getHours();
 
   return (
-    <li className={`${currentHour == hour ? 'activeHour' : null} hourListItem`}>
-      {currentHour == hour ? <span style={currentArrowStyle}>→</span> : null}
-      <label>{hourLabel}</label>
+    <li className={`relative flex items-center mb-2`}>
+      {currentHour == hour ? <span className="text-md -ml-6 mr-2 absolute">→</span> : null}
+      <label
+        className={`${
+          currentHour == hour ? 'text-inherit' : 'text-zinc-400'
+        } mr-1 sm:mr-4 w-16 font-light`}
+      >
+        {hourLabel}
+      </label>
       <input
         placeholder="Enter a task..."
         type="text"
@@ -43,12 +30,16 @@ export default function PlanListItem(props) {
         name={name}
         value={value}
         onChange={onChange}
-        style={complete ? completeInputStyle : null}
+        className={`w-full sm:p-4 p-2 bg-zinc-100 transition-all rounded-sm text-sm font-light border-2 border-transparent outline outline-2   duration-700 placeholder:text-zinc-400 placeholder:text-sm dark:bg-zinc-700
+        ${
+          complete ? 'outline-sky-500 text-sky-500' : 'outline-transparent focus:outline-zinc-400'
+        }`}
       />
       {value && (
         <span
-          style={complete ? completeCheckmarkStyle : null}
-          className="completeIcon material-icons-outlined"
+          className={`absolute -right-8 material-icons-outlined cursor-pointer transition-all ${
+            complete ? 'text-sky-500' : 'text-zinc-400 hover:text-black dark:hover:text-white'
+          } `}
           onClick={animate}
         >
           check

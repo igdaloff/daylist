@@ -61,8 +61,8 @@ export default function PlanList() {
       <form className="planForm" autoComplete="off">
         <ul>
           {renderPlanListItems()}
-          <li className="notesListItem">
-            <label className="notesLabel">Notes</label>
+          <li className="notesListItem relative flex mb-2 items-start pt-4 mt-4 border-t border-t-zinc-200">
+            <label className="notesLabel mr-1 sm:mr-4 w-16 text-zinc-400 font-light">Notes</label>
             <textarea
               rows="8"
               placeholder="Recap or reflect on the day..."
@@ -70,6 +70,7 @@ export default function PlanList() {
               onChange={handleInputChange}
               name="note"
               label="Note"
+              className="w-full sm:p-4 p-2 bg-zinc-100 border-2 border-transparent rounded-sm text-sm font-light outline-2 outline-transparent focus:outline-zinc-400 duration-700 placeholder:text-zinc-400 placeholder:text-sm dark:bg-zinc-700 resize-none"
             ></textarea>
           </li>
         </ul>

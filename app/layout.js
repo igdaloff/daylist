@@ -4,17 +4,17 @@ import { useState } from 'react';
 import ThemeContext from './contexts/theme-provider';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-import './styles/index.scss';
+import './styles/index.css';
 
 function Layout({ children }) {
-  const [theme, setTheme] = useState('lightMode');
+  const [theme, setTheme] = useState('light');
 
   const toggleTheme = () => {
-    setTheme(theme === 'lightMode' ? 'darkMode' : 'lightMode');
+    setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className="max-sm:text-[90%]">
       <head>
         <link
           href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
@@ -25,11 +25,19 @@ function Layout({ children }) {
           rel="stylesheet"
         ></link>
       </head>
-      <body className={theme}>
+      <body
+        className={`relative bg-zinc-100 font-sans text-zinc-800 ${theme} leading-tight min-h-screen`}
+      >
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
           <Nav />
-          <main className="content">
-            <div className="content-inner">{children}</div>
+          <main
+            className="
+            sm:min-h-screen sm:mt-8 sm:ml-16 sm:mr-0 sm:mb-0 sm:rounded-none sm:rounded-tl-lg 
+              sm:p-20 py-16 px-8 bg-white rounded-lg mx-4 mb-4 shadow-[0px_0px_13px_8px_rgba(158,158,158,0.2)] transition duration-300
+              dark:bg-zinc-800 dark:text-white 
+            "
+          >
+            <div className="pb-20 max-w-xl">{children}</div>
           </main>
           <Footer />
         </ThemeContext.Provider>
