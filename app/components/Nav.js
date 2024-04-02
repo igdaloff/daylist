@@ -7,8 +7,8 @@ export default function Nav() {
 
   return (
     <nav
-      className="flex items-center justify-between py-2 z-1 mx-[var(--space-3)] sm:mx-0 
-                sm:fixed sm:w-[calc(100vh-var(--space-5))] sm:h-[var(--space-7)] sm:top-0 sm:transform sm:rotate-270 sm:translate-y-[100vh] sm:origin-top-left sm:flex-row-reverse"
+      className="flex items-center justify-between py-2 z-10 mx-4 sm:mx-0 
+                sm:fixed sm:w-[calc(100vh-2rem)] sm:h-16 sm:top-0 sm:transform sm:rotate-270 sm:translate-y-[100vh] sm:origin-top-left sm:flex-row-reverse"
     >
       <Link
         href="/"
