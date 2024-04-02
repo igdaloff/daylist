@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import variables from '../styles/variables.module.scss';
 
 export default function PlanListItem(props) {
   const [complete, setComplete] = useState(false);

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import ThemeContext from './contexts/theme-provider';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-import './styles/index.scss';
+import './styles/index.css';
 
 function Layout({ children }) {
   const [theme, setTheme] = useState('light');
