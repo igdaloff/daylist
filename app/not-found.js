@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const NotFound = () => {
   return (
-    <div className="text-center">
+    <>
       <h1>Oops...</h1>
       <h2>That page cannot be found.</h2>
       <p>
@@ -11,7 +11,7 @@ const NotFound = () => {
           homepage
         </Link>
       </p>
-    </div>
+    </>
   );
 };
 

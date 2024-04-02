@@ -8,7 +8,8 @@ const Journal = () => {
         <meta name="description" content="Your previous journal entries" />
       </Head>
       <header>
-        <h1>My Journal</h1>
+        <h1 className="text-3xl font-semibold">My Journal</h1>
+        <p className="my-4">Feature coming soon!</p>
       </header>
     </div>
   );
