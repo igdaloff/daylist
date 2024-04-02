@@ -1,5 +1,10 @@
 import Head from 'next/head';
 
+export const metadata = {
+  title: 'Daylist | About',
+  description: 'About Daylist, a daily todo + journal app.',
+};
+
 export default function About() {
   return (
     <>

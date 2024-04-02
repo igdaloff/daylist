@@ -1,5 +1,10 @@
 import Head from 'next/head';
 
+export const metadata = {
+  title: 'Daylist | My Journal',
+  description: 'My Daylist journal.',
+};
+
 const Journal = () => {
   return (
     <div>
