@@ -25,7 +25,7 @@ function Layout({ children }) {
           rel="stylesheet"
         ></link>
       </head>
-      <body className={`relative bg-gray-100 font-sans ${theme}`}>
+      <body className={`relative bg-zinc-100 font-sans text-zinc-800 ${theme}`}>
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
           <Nav />
           <main
