@@ -1,9 +1,17 @@
-import { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
 
-export default function PlanListItem(props) {
-  const [complete, setComplete] = useState(false);
+interface PlanListItemProps {
+  hour: number;
+  hourLabel: string;
+  name: string;
+  value: string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+}
 
-  const { hour, hourLabel, name, onChange, value } = props;
+export default function PlanListItem(props: PlanListItemProps) {
+  const [complete, setComplete] = useState<boolean>(false);
+
+  const { hour, hourLabel, name, value, onChange } = props;
 
   const animate = () => {
     setComplete(!complete);
@@ -25,8 +33,6 @@ export default function PlanListItem(props) {
       <input
         placeholder="Enter a task..."
         type="text"
-        label="Todo"
-        hour={hour}
         name={name}
         value={value}
         onChange={onChange}

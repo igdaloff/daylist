@@ -1,6 +1,6 @@
-import Head from 'next/head';
+import type { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Daylist | About',
   description: 'About Daylist, a daily todo + journal app.',
 };
@@ -8,10 +8,6 @@ export const metadata = {
 export default function About() {
   return (
     <>
-      <Head>
-        <title>Daylist | About</title>
-        <meta name="description" content="About Day List" />
-      </Head>
       <h1 className="text-3xl font-semibold">About this Project</h1>
       <p className="my-4">
         I (
