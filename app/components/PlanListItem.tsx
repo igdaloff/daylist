@@ -1,4 +1,6 @@
-import { useState, ChangeEvent } from 'react';
+'use client';
+
+import { useState, ChangeEvent, use, useEffect } from 'react';
 
 interface PlanListItemProps {
   hour: number;
@@ -10,8 +12,13 @@ interface PlanListItemProps {
 
 export default function PlanListItem(props: PlanListItemProps) {
   const [complete, setComplete] = useState<boolean>(false);
+  const [hasValue, setHasValue] = useState<boolean>(false);
 
   const { hour, hourLabel, name, value, onChange } = props;
+
+  useEffect(() => {
+    props.value ? setHasValue(true) : setHasValue(false);
+  }, [value]);
 
   const animate = () => {
     setComplete(!complete);
@@ -41,7 +48,7 @@ export default function PlanListItem(props: PlanListItemProps) {
           complete ? 'outline-sky-500 text-sky-500' : 'outline-transparent focus:outline-zinc-400'
         }`}
       />
-      {value && (
+      {hasValue && (
         <span
           className={`absolute -right-8 material-icons-outlined cursor-pointer transition-all ${
             complete ? 'text-sky-500' : 'text-zinc-400 hover:text-black dark:hover:text-white'
