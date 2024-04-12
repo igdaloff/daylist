@@ -1,8 +1,16 @@
 export default function PlanHeader() {
   // Get today's date
-  const d = new Date();
-  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  const months = [
+  const d: Date = new Date();
+  const days: string[] = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ];
+  const months: string[] = [
     'January',
     'February',
     'March',
@@ -16,9 +24,9 @@ export default function PlanHeader() {
     'November',
     'December',
   ];
-  const date = String(d.getDate()).padStart(2, '0');
-  const year = d.getFullYear();
-  const today = days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + date + ', ' + year;
+  const date: string = String(d.getDate()).padStart(2, '0');
+  const year: number = d.getFullYear();
+  const today: string = days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + date + ', ' + year;
 
   return (
     <header>

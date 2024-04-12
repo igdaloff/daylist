@@ -6,8 +6,12 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 import './styles/index.css';
 
-function Layout({ children }) {
-  const [theme, setTheme] = useState('light');
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+function Layout({ children }: LayoutProps) {
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');

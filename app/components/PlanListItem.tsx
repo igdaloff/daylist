@@ -1,9 +1,24 @@
-import { useState } from 'react';
+'use client';
 
-export default function PlanListItem(props) {
-  const [complete, setComplete] = useState(false);
+import { useState, ChangeEvent, use, useEffect } from 'react';
 
-  const { hour, hourLabel, name, onChange, value } = props;
+interface PlanListItemProps {
+  hour: number;
+  hourLabel: string;
+  name: string;
+  value: string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+}
+
+export default function PlanListItem(props: PlanListItemProps) {
+  const [complete, setComplete] = useState<boolean>(false);
+  const [hasValue, setHasValue] = useState<boolean>(false);
+
+  const { hour, hourLabel, name, value, onChange } = props;
+
+  useEffect(() => {
+    props.value ? setHasValue(true) : setHasValue(false);
+  }, [value]);
 
   const animate = () => {
     setComplete(!complete);
@@ -25,8 +40,6 @@ export default function PlanListItem(props) {
       <input
         placeholder="Enter a task..."
         type="text"
-        label="Todo"
-        hour={hour}
         name={name}
         value={value}
         onChange={onChange}
@@ -35,7 +48,7 @@ export default function PlanListItem(props) {
           complete ? 'outline-sky-500 text-sky-500' : 'outline-transparent focus:outline-zinc-400'
         }`}
       />
-      {value && (
+      {hasValue && (
         <span
           className={`absolute -right-8 material-icons-outlined cursor-pointer transition-all ${
             complete ? 'text-sky-500' : 'text-zinc-400 hover:text-black dark:hover:text-white'

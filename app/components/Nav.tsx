@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import Link from 'next/link';
-import ThemeProvider from '../contexts/theme-provider';
+import ThemeProvider, { ThemeContextProps } from '../contexts/theme-provider';
 
 export default function Nav() {
-  const { theme, toggleTheme } = useContext(ThemeProvider);
+  const { theme, toggleTheme }: ThemeContextProps = useContext(ThemeProvider);
 
   return (
     <nav
